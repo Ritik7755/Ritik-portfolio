@@ -1404,35 +1404,37 @@
 
         <div class="contact-right">
 
-            <form>
+           <form id="contactForm">
 
-                <input
-                    type="text"
-                    placeholder="Your Name"
-                    required>
+    <input
+        id="name"
+        type="text"
+        placeholder="Your Name"
+        required>
 
-                <input
-                    type="email"
-                    placeholder="Email Address"
-                    required>
+    <input
+        id="email"
+        type="email"
+        placeholder="Email Address"
+        required>
 
-                <input
-                    type="text"
-                    placeholder="Subject"
-                    required>
+    <input
+        id="subject"
+        type="text"
+        placeholder="Subject"
+        required>
 
-                <textarea
-                    rows="6"
-                    placeholder="Write your message..."
-                    required></textarea>
+    <textarea
+        id="message"
+        rows="6"
+        placeholder="Write your message..."
+        required></textarea>
 
-                <button type="submit">
+    <button type="submit">
+        Send Message
+    </button>
 
-                    Send Message
-
-                </button>
-
-            </form>
+</form>
 
         </div>
 
@@ -1544,12 +1546,13 @@ src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js">
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <!-- ========================= -->
 <!-- JAVASCRIPT -->
 <!-- ========================= -->
-
+<script src="supabase.js"></script>
+<script src="contact.js"></script>
 <script src="./main.js"></script>
 <script src="loader.js"></script>
 
