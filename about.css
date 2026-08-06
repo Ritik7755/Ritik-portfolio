@@ -1,0 +1,199 @@
+/*=========================================
+ABOUT SECTION
+=========================================*/
+
+.about{
+
+    position:relative;
+
+}
+
+.about-container{
+
+    max-width:1200px;
+
+    margin:70px auto 0;
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+/*=========================================
+ABOUT IMAGE
+=========================================*/
+
+.about-image{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.about-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:linear-gradient(
+
+    135deg,
+
+    rgba(0,245,255,.18),
+
+    rgba(139,92,246,.18));
+
+    border-radius:50%;
+
+    filter:blur(60px);
+
+    animation:rotateGlow 10s linear infinite;
+
+}
+
+.about-image img{
+
+    width:380px;
+
+    height:480px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:2px solid rgba(255,255,255,.08);
+
+    position:relative;
+
+    z-index:2;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+/*=========================================
+ABOUT CONTENT
+=========================================*/
+
+.about-content h3{
+
+    font-size:38px;
+
+    margin-bottom:25px;
+
+    line-height:1.4;
+
+}
+
+.about-content p{
+
+    color:#c7c7c7;
+
+    line-height:1.9;
+
+    margin-bottom:22px;
+
+    font-size:16px;
+
+}
+
+.about-content strong{
+
+    color:var(--primary);
+
+}
+
+/*=========================================
+INFO BOX
+=========================================*/
+
+.about-info{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.info-box{
+
+    background:#171717;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:22px;
+
+    border-radius:18px;
+
+    transition:.4s;
+
+    backdrop-filter:blur(20px);
+
+}
+
+.info-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 18px 45px rgba(0,245,255,.18);
+
+}
+
+.info-box h4{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+    font-size:17px;
+
+}
+
+.info-box span{
+
+    color:#e3e3e3;
+
+    font-size:15px;
+
+}
+
+/*=========================================
+ROTATION
+=========================================*/
+
+@keyframes rotateGlow{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

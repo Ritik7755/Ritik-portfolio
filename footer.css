@@ -1,0 +1,199 @@
+/*=========================================
+FOOTER
+=========================================*/
+
+footer{
+
+    padding:70px 10% 35px;
+
+    margin-top:100px;
+
+    background:#171717;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+}
+
+.footer-top h2{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+    color:var(--white);
+
+}
+
+.footer-top p{
+
+    color:#bdbdbd;
+
+    margin-bottom:35px;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+.footer-social a{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:22px;
+
+    background:#171717;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+}
+
+.footer-social a:hover{
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--purple));
+
+    transform:translateY(-8px);
+
+}
+
+.footer-bottom{
+
+    margin-top:30px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-bottom p{
+
+    color:#999;
+
+    font-size:15px;
+
+}
+
+/*=========================================
+BACK TO TOP BUTTON
+=========================================*/
+
+#topBtn{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50%;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--purple));
+
+    color:#fff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    transition:.4s;
+
+}
+
+#topBtn:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,245,255,.3);
+
+}
+
+/*=========================================
+MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+.footer-top h2{
+
+font-size:32px;
+
+}
+
+.footer-top p{
+
+font-size:15px;
+
+}
+
+.footer-social{
+
+flex-wrap:wrap;
+
+}
+
+#topBtn{
+
+right:20px;
+
+bottom:20px;
+
+width:48px;
+
+height:48px;
+
+}
+
+}

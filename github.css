@@ -1,0 +1,205 @@
+/*=========================================
+GITHUB SECTION
+=========================================*/
+
+.github{
+    padding:120px 0;
+}
+
+.github-container{
+
+    max-width:1200px;
+
+    margin:70px auto 0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+/* LEFT */
+
+.github-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.github-image i{
+
+    font-size:220px;
+
+    color:var(--primary);
+
+    text-shadow:0 0 40px rgba(0,245,255,.45);
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+/* RIGHT */
+
+.github-content h3{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.github-content p{
+
+    color:#cfcfcf;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+
+/* STATS */
+
+.github-stats{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:40px;
+
+}
+
+.github-stats div{
+
+    flex:1;
+
+   background:#171717;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:20px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+.github-stats div:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+}
+
+.github-stats h4{
+
+    font-size:30px;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.github-stats span{
+
+    color:#ddd;
+
+    font-size:15px;
+
+}
+
+/* BUTTON */
+
+.github-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--purple)
+    );
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.github-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 40px rgba(0,245,255,.25);
+
+}
+
+/* FLOAT */
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.github-container{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.github-stats{
+
+    flex-direction:column;
+
+}
+
+.github-image{
+
+    order:-1;
+
+}
+
+}

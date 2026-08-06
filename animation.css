@@ -1,0 +1,336 @@
+/*==========================================
+BACKGROUND ANIMATION
+==========================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:#171717;
+
+    filter:blur(130px);
+
+    top:-180px;
+
+    left:-180px;
+
+    animation:moveOne 12s ease-in-out infinite;
+
+    z-index:-5;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:#171717;
+
+    filter:blur(130px);
+
+    bottom:-220px;
+
+    right:-220px;
+
+    animation:moveTwo 15s ease-in-out infinite;
+
+    z-index:-5;
+
+}
+
+@keyframes moveOne{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(150px,120px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+@keyframes moveTwo{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-120px,-150px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+/*==========================================
+SECTION TITLE ANIMATION
+==========================================*/
+
+.section-title h2{
+
+    position:relative;
+
+}
+
+.section-title h2::after{
+
+    content:"";
+
+    width:70px;
+
+    height:4px;
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--purple));
+
+    display:block;
+
+    margin:18px auto 0;
+
+    border-radius:20px;
+
+}
+
+/*==========================================
+CARD HOVER EFFECT
+==========================================*/
+
+.project-card,
+
+.analytics-card,
+
+.skill-card,
+
+.certificate-card,
+
+.experience-card,
+
+.achievement-card{
+
+    transition:.45s;
+
+}
+
+.project-card:hover,
+
+.analytics-card:hover,
+
+.skill-card:hover,
+
+.certificate-card:hover,
+
+.experience-card:hover,
+
+.achievement-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 60px rgba(0,245,255,.15);
+
+}
+
+/*==========================================
+IMAGE HOVER
+==========================================*/
+
+.project-card img{
+
+    transition:.6s;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/*==========================================
+BUTTON ANIMATION
+==========================================*/
+
+.primary-btn,
+
+.secondary-btn,
+
+.project-links a,
+
+.project-btn a,
+
+.nav-btn a{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-btn::before,
+
+.secondary-btn::before,
+
+.project-links a::before,
+
+.project-btn a::before,
+
+
+
+.primary-btn:hover::before,
+
+.secondary-btn:hover::before,
+
+.project-links a:hover::before,
+
+.project-btn a:hover::before,
+
+.nav-btn a:hover::before{
+
+    left:100%;
+
+}
+
+/*==========================================
+PROFILE FLOAT
+==========================================*/
+
+.image-box{
+
+    animation:floatImage 5s ease-in-out infinite;
+
+}
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*==========================================
+SOCIAL ICONS
+==========================================*/
+
+.social-icons a{
+
+    animation:iconFloat 4s infinite;
+
+}
+
+.social-icons a:nth-child(2){
+
+    animation-delay:.4s;
+
+}
+
+.social-icons a:nth-child(3){
+
+    animation-delay:.8s;
+
+}
+
+@keyframes iconFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================
+SCROLL DOWN
+==========================================*/
+
+.scroll-down{
+
+    animation:scrollBounce 2s infinite;
+
+}
+
+@keyframes scrollBounce{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,12px);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+}
