@@ -1,4 +1,8 @@
+
+console.log("STEP 1");
+
 /*=========================================
+
 LOADER
 =========================================*/
 
@@ -13,14 +17,21 @@ CUSTOM CURSOR
 LENIS SMOOTH SCROLL
 =========================================*/
 
-if (typeof Lenis !== "undefined") {
+/*=========================================
+LENIS SMOOTH SCROLL
+=========================================*/
+
+if (
+    typeof Lenis !== "undefined" &&
+    typeof gsap !== "undefined" &&
+    typeof ScrollTrigger !== "undefined"
+) {
 
     const lenis = new Lenis({
         duration: 1.2,
         smoothWheel: true
     });
 
-    // Sync Lenis with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
@@ -31,10 +42,9 @@ if (typeof Lenis !== "undefined") {
 
 } else {
 
-    console.warn("Lenis library not loaded.");
+    console.warn("Lenis / GSAP / ScrollTrigger not loaded.");
 
 }
-
 
 /*=========================================
 HEADER EFFECT
@@ -111,24 +121,27 @@ GSAP HERO ANIMATION
 SCROLL REVEAL
 =========================================*/
 
-gsap.utils.toArray("section").forEach((section)=>{
+if (typeof gsap !== "undefined") {
 
-    gsap.from(section,{
+    gsap.utils.toArray("section").forEach((section) => {
 
-        scrollTrigger:{
-
-            trigger:section,
-
-            start:"top 80%"
-
-        },
-
-        y:80,
-
-        opacity:0,
-
-        duration:1
+        gsap.from(section, {
+            scrollTrigger: {
+                trigger: section,
+                start: "top 80%"
+            },
+            y: 80,
+            opacity: 0,
+            duration: 1
+        });
 
     });
 
+}
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("nav");
+
+menu.addEventListener("click", () => {
+    nav.classList.toggle("active");
 });
+console.log("Main JS Loaded");
