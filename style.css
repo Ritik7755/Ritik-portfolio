@@ -752,6 +752,6 @@ ACHIEVEMENTS SECTION
 
 /* Hide Mobile Resume Buttons on Desktop */
 .mobile-resume,
-.mobile-download{
+.mobile-download {
     display:none;
 }

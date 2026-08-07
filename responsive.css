@@ -504,20 +504,9 @@ nav ul{
 .contact-form button{
     width:100%;
 }
-
-}
-.contact-left h3,
-.contact-left h2,
-.contact-left p{
-    padding-left:15px;
-}
-
-
-/* Mobile Resume Buttons */
-
 .mobile-resume,
 .mobile-download{
-    display:block;
+    display:list-item;
 }
 
 .mobile-resume a,
@@ -530,3 +519,13 @@ nav ul{
     text-align:center;
     margin-top:10px;
 }
+}
+.contact-left h3,
+.contact-left h2,
+.contact-left p{
+    padding-left:15px;
+}
+
+
+/* Mobile Resume Buttons */
+
