@@ -13,17 +13,20 @@ contactForm.addEventListener("submit", async (e) => {
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-    const { error } = await supabaseClient
-        .from("contact_messages")
-        .insert([
-            {
-                name,
-                email,
-                subject,
-                message
-            }
-        ]);
+ const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name,
+        email,
+        subject,
+        message
+    })
+});
 
+const data = await response.json();
    if (error) {
 
     console.error("Supabase Error:", error);
