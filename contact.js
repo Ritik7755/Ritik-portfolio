@@ -13,7 +13,8 @@ contactForm.addEventListener("submit", async (e) => {
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-   const response = await fetch("/api/contact", {
+ // 1. Save message to Supabase through backend
+const response = await fetch("/api/contact", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -29,17 +30,24 @@ contactForm.addEventListener("submit", async (e) => {
 const data = await response.json();
 
 if (!data.success) {
-
-    console.error(data.message);
-
     alert("❌ " + data.message);
-
     return;
-
 }
 
-alert("✅ Message sent successfully!");
+// 2. Send email to yourself
+await emailjs.send(
+    "service_usd71dz",
+    "template_xw6g6ya",
+    {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
+    }
+);
 
+// 3. Success
+alert("✅ Message sent successfully!");
 contactForm.reset();
 
 });
