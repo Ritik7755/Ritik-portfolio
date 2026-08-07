@@ -1,7 +1,7 @@
 // ===============================
 // CONTACT FORM
 // ===============================
-
+console.log("contact.js loaded");
 const contactForm = document.getElementById("contactForm");
 
 contactForm.addEventListener("submit", async (e) => {
@@ -13,26 +13,6 @@ contactForm.addEventListener("submit", async (e) => {
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
- // 1. Save message to Supabase through backend
-const response = await fetch("/api/contact", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        name,
-        email,
-        subject,
-        message
-    })
-});
-
-const data = await response.json();
-
-if (!data.success) {
-    alert("❌ " + data.message);
-    return;
-}
 
 // 1. Save message to Supabase through backend
 const response = await fetch("/api/contact", {
