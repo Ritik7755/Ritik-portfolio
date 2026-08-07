@@ -34,6 +34,27 @@ if (!data.success) {
     return;
 }
 
+// 1. Save message to Supabase through backend
+const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name,
+        email,
+        subject,
+        message
+    })
+});
+
+const data = await response.json();
+
+if (!data.success) {
+    alert("❌ " + data.message);
+    return;
+}
+
 // 2. Send notification email to you
 await emailjs.send(
     "service_usd71dz",
@@ -46,7 +67,7 @@ await emailjs.send(
     }
 );
 
-// 3. Send thank-you email to visitor
+// 3. Send auto reply to visitor
 await emailjs.send(
     "service_usd71dz",
     "template_ylkdfug",
@@ -58,6 +79,8 @@ await emailjs.send(
     }
 );
 
-// 4. Success
+// 3. Success
 alert("✅ Message sent successfully!");
 contactForm.reset();
+
+});
