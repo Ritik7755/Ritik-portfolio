@@ -28,16 +28,31 @@ module.exports = async (req, res) => {
 
     } = req.body;
 
-    console.log(name);
-    console.log(email);
-    console.log(subject);
-    console.log(message);
+ const { error } = await supabase
+    .from("contact_messages")
+    .insert([
+        {
+            name,
+            email,
+            subject,
+            message
+        }
+    ]);
 
-    return res.status(200).json({
+if (error) {
 
-        success: true,
-        message: "Data Received Successfully"
-
+    return res.status(500).json({
+        success: false,
+        message: error.message
     });
+
+}
+
+return res.status(200).json({
+
+    success: true,
+    message: "Message Saved Successfully"
+
+});
 
 };
