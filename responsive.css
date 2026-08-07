@@ -511,3 +511,25 @@ nav ul{
 .contact-left p{
     padding-left:15px;
 }
+.mobile-resume,
+.mobile-download{
+    display:block;
+}
+
+.mobile-resume a,
+.mobile-download a{
+
+    display:block;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    background:#1d1d1d;
+
+    color:#fff;
+
+    text-align:center;
+
+    margin-top:10px;
+}

@@ -749,3 +749,8 @@ ACHIEVEMENTS SECTION
     padding:0 20px;
 
 }
+
+.mobile-resume,
+.mobile-download{
+    display:none;
+}
