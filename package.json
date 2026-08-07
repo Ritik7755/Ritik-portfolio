@@ -1,0 +1,25 @@
+{
+  "name": "ritik-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ritik7755/Ritik-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ritik7755/Ritik-portfolio/issues"
+  },
+  "homepage": "https://github.com/Ritik7755/Ritik-portfolio#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.2",
+    "resend": "^6.18.1"
+  }
+}
