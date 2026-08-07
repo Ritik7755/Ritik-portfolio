@@ -34,20 +34,30 @@ if (!data.success) {
     return;
 }
 
-// 2. Send email to yourself
+// 2. Send notification email to you
 await emailjs.send(
     "service_usd71dz",
     "template_xw6g6ya",
     {
-        name: name,
-        email: email,
-        subject: subject,
-        message: message
+        name,
+        email,
+        subject,
+        message
     }
 );
 
-// 3. Success
+// 3. Send thank-you email to visitor
+await emailjs.send(
+    "service_usd71dz",
+    "template_ylkdfug",
+    {
+        name,
+        email,
+        subject,
+        message
+    }
+);
+
+// 4. Success
 alert("✅ Message sent successfully!");
 contactForm.reset();
-
-});
