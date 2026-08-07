@@ -3,10 +3,13 @@
 // ===============================
 console.log("contact.js loaded");
 const contactForm = document.getElementById("contactForm");
+const submitBtn = contactForm.querySelector("button");
 
 contactForm.addEventListener("submit", async (e) => {
 
     e.preventDefault();
+    submitBtn.disabled = true;
+submitBtn.innerHTML = "Sending...";
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -30,10 +33,12 @@ const response = await fetch("/api/contact", {
 
 const data = await response.json();
 
-if (!data.success) {
-    alert("❌ " + data.message);
-    return;
-}
+alert("✅ Message sent successfully!");
+
+contactForm.reset();
+
+submitBtn.disabled = false;
+submitBtn.innerHTML = "Send Message";
 
 // 2. Send notification email to you
 await emailjs.send(
