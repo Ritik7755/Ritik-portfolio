@@ -28,18 +28,18 @@ contactForm.addEventListener("submit", async (e) => {
 
 const data = await response.json();
 
-   if (error) {
+if (!data.success) {
 
-    console.error("Supabase Error:", error);
+    console.error(data.message);
 
-    alert(error.message);
+    alert("❌ " + data.message);
 
     return;
 
 }
 
-    alert("✅ Message sent successfully!");
+alert("✅ Message sent successfully!");
 
-    contactForm.reset();
+contactForm.reset();
 
 });
